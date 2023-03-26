@@ -13,23 +13,32 @@
 <body>
   <header>
     <div class="logo">
-      <h1>Cozy House</h1>
-      <p>Shelter for pets in Boston</p>
+      <h1><a href="#">Cozy House
+          <span class="logo-text">Shelter for pets in Boston</span>
+        </a></h1>
+      <!-- <p>Shelter for pets in Boston</p> -->
     </div>
-    <nav>
-      <li class="selected">
-        <a href="" class="subheading selected-nav">About the shelter</a>
-      </li>
-      <li>
-        <a href="" class="subheading own-nav">Our pets</a>
-      </li>
-      <li>
-        <a href="" class="subheading own-nav">Help the shelter</a>
-      </li>
-      <li>
-        <a href="" class="subheading own-nav">Contacts</a>
-      </li>
-    </nav>
+    <div class="navigation">
+      <input type="radio" name="groop" id="about" checked="checked">
+      <label for="about">
+        <a href="" class="subheading">About the shelter</a>
+      </label>
+
+      <input type="radio" name="groop" id="pets">
+      <label for="pets">
+        <a href="../our-pets/index.html" class="subheading">Our pets</a>
+      </label>
+
+      <input type="radio" name="groop" id="help-shelter" >
+      <label for="help-shelter">
+        <a href="#help" class="subheading">Help the shelter</a>
+      </label>
+
+      <input type="radio" name="groop" id="contacts">
+      <label for="contacts">
+        <a href="#footer" class="subheading">Contacts</a>
+      </label>
+    </div>
   </header>
   <main>
     <section class="not-only">
@@ -38,22 +47,33 @@
           <h2 class="header-2">Not only people<br>need a house</h2>
           <p class="subheading">We offer to give a chance to a little and nice puppy with an extremely wide and open
             heart. He or she will love you more than anybody else in the world, you will see!</p>
-          <button class="button">Make a friend</button>
+          <form action="#our-friends">
+            <button class="button">Make a friend
+              <!-- <a href="#our-friends" class="button">Make a friend</a> -->
+            </button>
+          </form>
         </div>
         <div class="main-dog"></div>
       </div>
     </section>
+
     <section class="about">
       <div class="about-container">
         <div class="about-pets"></div>
         <div class="about-text">
           <h3 class="header-3">About the shelter<br>“Cozy House”</h3>
-          <p class="subheading">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
-          <p class="subheading">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
+          <p class="subheading">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20%
+            of them will find a family. The others will continue to live with us and will be waiting for a lucky chance
+            to become dearly loved.</p>
+          <p class="subheading">We feed our wards with the best food and make sure that they do not get sick, feel
+            comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of
+            various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals,
+            they become attached to the pets and would hardly ever leave them alone.</p>
         </div>
       </div>
     </section>
-    <section class="our-friends">
+
+    <section class="our-friends" id="our-friends">
       <div class="our-friends-container">
         <h3 class="header-3">Our friends who<br>are looking for a house</h3>
         <div class="slider">
@@ -65,20 +85,20 @@
           </button>
           <div class="slider-inner">
             <div class="card">
-              <div class="card-foto"></div>
+              <div class="card-foto one"></div>
               <h4 class="header-4">Katrine</h4>
               <button class="button">Learn more</button>
             </div>
 
             <div class="card">
-              <div class="card-foto"></div>
-              <h4 class="header-4">Katrine</h4>
+              <div class="card-foto two"></div>
+              <h4 class="header-4">Jennifer</h4>
               <button class="button">Learn more</button>
             </div>
 
             <div class="card">
-              <div class="card-foto"></div>
-              <h4 class="header-4">Katrine</h4>
+              <div class="card-foto three"></div>
+              <h4 class="header-4">Woody</h4>
               <button class="button">Learn more</button>
             </div>
           </div>
@@ -86,10 +106,54 @@
         <button class="button rest">Get to know the rest</button>
       </div>
     </section>
-    <section class="help"></section>
-    <section class="in-addition"></section>
+
+    <section class="help" id="help">
+      <div class="help-container">
+        <h3 class="header-3">How you can help<br>our shelter</h3>
+        <div class="option"></div>
+      </div>
+    </section>
+
+    <section class="in-addition">
+      <div class="in-addition-container">
+        <div class="in-addition-foto"></div>
+        <div class="in-addition-text">
+          <h3 class="header-3">You can also<br>make a donation</h3>
+          <p class="bank-text">Name of the bank / Type of bank account</p>
+          <form action="">
+            <!-- <div class="credit-card"></div> -->
+            <a class="header-4" href="#!"><img src="../../assets/svg/credit-card.svg" width="35" height="23"
+                alt="Card">8380 2880 8028 8791 7435</a>
+            <!-- <input type="text" placeholder="8380 2880 8028 8791 7435"> -->
+          </form>
+          <p class="paragraph legal-text">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate.
+            Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer></footer>
+
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="question">
+        <h3 class="header-3">For questions and suggestions</h3>
+        <a class="header-4 mail" href="mailto:email@shelter.com"><img src="../../assets/svg/mail.svg" width="40"
+            height="26" alt="Mail">email@shelter.com</a>
+        <a class="header-4 phone" href="tel:+136745677554"><img src="../../assets/svg/phone.svg" width="40" height="32"
+            alt="Phone">+13 674 567 75 54</a>
+      </div>
+      <div class="visit">
+        <h3 class="header-3">We are waiting for your visit</h3>
+        <a class="header-4 boston" href="https://goo.gl/maps/nt6vTJ9XZNbZL6TB6" target="_blank"><img
+            src="../../assets/svg/pin.svg" width="41" height="32" alt="Location">1 Central Street, Boston (entrance from
+          the store)</a>
+        <a class="header-4 london" href="https://goo.gl/maps/rjoDb4aJfvXNFK4E7" target="_blank"><img
+            src="../../assets/svg/pin.svg" width="22" height="32" alt="Location">18 South Park, London</a>
+      </div>
+      <div class="footer-dog"></div>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 

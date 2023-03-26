@@ -1,0 +1,292 @@
+@font-face {
+  font-family: "GeorgiaRegular";
+  src: url("/shelter/assets/fonts/GeorgiaRegular/GeorgiaRegular.eot");
+  src: url("/shelter/assets/fonts/GeorgiaRegular/GeorgiaRegular.eot?#iefix")format("embedded-opentype"),
+    url("/shelter/assets/fonts/GeorgiaRegular/GeorgiaRegular.woff") format("woff"),
+    url("/shelter/assets/fonts/GeorgiaRegular/GeorgiaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ArialRegular";
+  src: url("/shelter/assets/fonts/ArialRegular/ArialRegular.eot");
+  src: url("/shelter/assets/fonts/ArialRegular/ArialRegular.eot?#iefix")format("embedded-opentype"),
+    url("/shelter/assets/fonts/ArialRegular/ArialRegular.woff") format("woff"),
+    url("/shelter/assets/fonts/ArialRegular/ArialRegular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.header-2 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 130%;
+  /* or 57px */
+}
+
+.header-3 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  /* or 45px */
+  letter-spacing: 0.06em;
+}
+
+.header-4 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  /* identical to box height, or 23px */
+  letter-spacing: 0.06em;
+}
+
+.header-5 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  /* identical to box height, or 23px */
+  letter-spacing: 0.06em;
+}
+
+.subheading {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  /* identical to box height, or 24px */
+}
+
+.paragraph {
+  font-family: 'Arial';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+}
+
+.button {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  /* identical to box height, or 22px */
+  letter-spacing: 0.06em;
+  margin-block-end: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgb(210, 194, 225); */
+}
+
+header {
+  width: 1280px;
+  height: 60px;
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+}
+
+.logo {
+  height: 100%;
+}
+
+/* .logo h1 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+} */
+
+.logo a {
+  text-decoration: none;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  /* or 35px */
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  display: flex;
+  flex-direction: column;
+  transition: color 0.4s;
+}
+
+.logo a:hover {
+  color: #FDDCC4;
+  transition: color 0.2s;
+}
+
+.logo-text {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  /* identical to box height */
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin-block-start: 10px;
+  padding-left: 4px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  column-gap: 14px;
+}
+
+input {
+  width: 0;
+  height: 0;
+  appearance: none;
+}
+
+.navigation a {
+  color: #CDCDCD;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1px;
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+.navigation a:hover {
+  color: #FAFAFA;
+  transition: color 0.2s;
+}
+
+input:checked+label a {
+  color: #FAFAFA;
+  border-bottom: solid 3px #F1CDB3;
+}
+
+/* label a:active {
+  color: #FAFAFA;
+} */
+
+
+.selected {
+  border-bottom: solid 3px #F1CDB3;
+}
+
+
+
+
+
+footer {
+  width: 100%;
+  background: url("../../assets/png/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container {
+  width: 1280px;
+  height: 100%;
+  padding: 40px 40px 0px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* column-gap: 160px; */
+}
+
+.question,
+.visit {
+  height: 81%;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.question {
+  width: 24%;
+}
+
+.visit {
+  width: 26%;
+}
+
+.question h3,
+.visit h3 {
+  color: #FFFFFF;
+}
+
+.mail,
+.phone,
+.boston,
+.london {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
+  text-decoration: none;
+  color: #F1CDB3;
+  transition: background-color 0.4s;
+}
+
+.mail:hover,
+.phone:hover,
+.boston:hover,
+.london:hover {
+  color: #f5e2d5;
+  transition: background-color 0.2s;
+}
+
+.footer-dog {
+  width: 300px;
+  height: 310px;
+  background: url("../../assets/png/footer-puppy.png");
+}
+
+
+
+
+
+
+
+
+

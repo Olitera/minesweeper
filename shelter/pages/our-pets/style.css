@@ -103,7 +103,7 @@ h4 {
 }
 
 body {
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   margin: 0;
   display: flex;
@@ -159,6 +159,8 @@ header {
 }
 
 .navigation {
+  margin-top: -1px;
+  padding-right: 1px;
   display: flex;
   flex-direction: row;
   column-gap: 14px;

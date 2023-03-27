@@ -50,6 +50,7 @@ console.log(`Score 100/100
 обязательное требование к интерактивности: плавное изменение внешнего вида элемента при наведении и клике, не влияющее на соседние элементы +2`)
 
 const containerDiv = document.querySelector('.slider-inner');
+const helpInput = document.getElementById('help-shelter');
 const cardTextArray = ['Katrine', 'Jennifer', 'Woody'];
 
 const cardInner = `<div class="card-foto"></div>
@@ -83,4 +84,8 @@ for (let i = 0; i < optionCardTextArray.length; i++) {
   optionDiv.append(optionCard);
 }
 
-
+document.addEventListener('DOMContentLoaded', () => {
+  if(!!location.href.match(/#help/)) {
+    helpInput.checked = true;
+  }
+})

@@ -13,10 +13,9 @@
 <body>
   <header>
     <div class="logo">
-      <h1><a href="#">Cozy House
-          <span class="logo-text">Shelter for pets in Boston</span>
-        </a></h1>
-      <!-- <p>Shelter for pets in Boston</p> -->
+      <h1>
+        <a href="#">Cozy House<span class="logo-text">Shelter for pets in Boston</span></a>
+      </h1>
     </div>
     <div class="navigation">
       <input type="radio" name="groop" id="about" checked="checked">
@@ -29,15 +28,11 @@
         <a href="../our-pets/index.html" class="subheading">Our pets</a>
       </label>
 
-      <input type="radio" name="groop" id="help-shelter" >
-      <label for="help-shelter">
-        <a href="#help" class="subheading">Help the shelter</a>
-      </label>
+      <input type="radio" name="groop" id="help-shelter" onchange="location.href='#help'">
+      <label for="help-shelter" class="subheading label-text">Help the shelter</label>
 
-      <input type="radio" name="groop" id="contacts">
-      <label for="contacts">
-        <a href="#footer" class="subheading">Contacts</a>
-      </label>
+      <input type="radio" name="groop" id="contacts" onchange="location.href='#footer'">
+      <label for="contacts" class="subheading label-text">Contacts</label>
     </div>
   </header>
   <main>
@@ -48,9 +43,7 @@
           <p class="subheading">We offer to give a chance to a little and nice puppy with an extremely wide and open
             heart. He or she will love you more than anybody else in the world, you will see!</p>
           <form action="#our-friends">
-            <button class="button">Make a friend
-              <!-- <a href="#our-friends" class="button">Make a friend</a> -->
-            </button>
+            <button class="button">Make a friend</button>
           </form>
         </div>
         <div class="main-dog"></div>
@@ -77,33 +70,13 @@
       <div class="our-friends-container">
         <h3 class="header-3">Our friends who<br>are looking for a house</h3>
         <div class="slider">
-          <button class="arrow-left">
-            <div class="arrow-left-icon"></div>
-          </button>
-          <button class="arrow-right">
-            <div class="arrow-right-icon"></div>
-          </button>
-          <div class="slider-inner">
-            <div class="card">
-              <div class="card-foto one"></div>
-              <h4 class="header-4">Katrine</h4>
-              <button class="button">Learn more</button>
-            </div>
-
-            <div class="card">
-              <div class="card-foto two"></div>
-              <h4 class="header-4">Jennifer</h4>
-              <button class="button">Learn more</button>
-            </div>
-
-            <div class="card">
-              <div class="card-foto three"></div>
-              <h4 class="header-4">Woody</h4>
-              <button class="button">Learn more</button>
-            </div>
-          </div>
+          <button class="arrow-left"></button>
+          <button class="arrow-right"></button>
+          <div class="slider-inner"></div>
         </div>
-        <button class="button rest">Get to know the rest</button>
+        <form action="../our-pets/index.html">
+          <button class="button rest">Get to know the rest</button>
+        </form>
       </div>
     </section>
 
@@ -120,7 +93,7 @@
         <div class="in-addition-text">
           <h3 class="header-3">You can also<br>make a donation</h3>
           <p class="bank-text">Name of the bank / Type of bank account</p>
-          <form action="">
+          <form action="#!">
             <!-- <div class="credit-card"></div> -->
             <a class="header-4" href="#!"><img src="../../assets/svg/credit-card.svg" width="35" height="23"
                 alt="Card">8380 2880 8028 8791 7435</a>

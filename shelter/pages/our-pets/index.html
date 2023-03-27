@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,13 @@
   <link class="flav" rel="icon" href="../../assets/svg/flav.svg">
   <title>shelter</title>
 </head>
+
 <body>
   <header>
     <div class="logo">
-      <h1><a href="#">Cozy House
-          <span class="logo-text">Shelter for pets in Boston</span>
-        </a></h1>
-      <!-- <p>Shelter for pets in Boston</p> -->
+      <h1>
+        <a href="../main/index.html">Cozy House<span class="logo-text">Shelter for pets in Boston</span></a>
+      </h1>
     </div>
     <div class="navigation">
       <input type="radio" name="groop" id="about">
@@ -27,20 +28,33 @@
         <a href="" class="subheading">Our pets</a>
       </label>
 
-      <input type="radio" name="groop" id="help-shelter" >
+      <input type="radio" name="groop" id="help-shelter">
       <label for="help-shelter">
-        <a href="#help" class="subheading">Help the shelter</a>
+        <a href="../main/index.html#help" class="subheading">Help the shelter</a>
       </label>
 
-      <input type="radio" name="groop" id="contacts">
-      <label for="contacts">
-        <a href="#footer" class="subheading">Contacts</a>
-      </label>
+      <input type="radio" name="groop" id="contacts" onchange="location.href='#footer'">
+      <label for="contacts" class="subheading label-text">Contacts</label>
+
     </div>
   </header>
 
   <main>
-    <section class="our-friends"></section>
+    <section class="our-friends">
+      <div class="our-friends-container">
+        <h3 class="header-3">Our friends who<br>are looking for a house</h3>
+        <div class="card-container">
+          <div class="card-container-inner"></div>
+        </div>
+        <div class="button-container">
+          <button class="dobl-arrow-left header-4" disabled>&lt;&lt;</button>
+          <button class="arrow-left header-4" disabled>&lt;</button>
+          <button class="number header-4">1</button>
+          <button class="arrow-right header-4">&gt;</button>
+          <button class="dowl-arrow-right header-4">&gt;&gt;</button>
+        </div>
+      </div>
+    </section>
 
   </main>
 

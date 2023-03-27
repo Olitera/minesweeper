@@ -114,29 +114,17 @@ body {
 
 header {
   width: 1280px;
-  height: 60px;
-  padding: 0px 40px;
+  /* height: 60px; */
+  padding: 30px 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 30px;
 }
 
 .logo {
   height: 100%;
 }
-
-/* .logo h1 {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 110%;
-  letter-spacing: 0.06em;
-  color: #F1CDB3;
-} */
 
 .logo a {
   text-decoration: none;
@@ -147,7 +135,7 @@ header {
   line-height: 110%;
   /* or 35px */
   letter-spacing: 0.06em;
-  color: #F1CDB3;
+  color: #545454;
   display: flex;
   flex-direction: column;
   transition: color 0.4s;
@@ -164,9 +152,8 @@ header {
   font-weight: 400;
   font-size: 13px;
   line-height: 15px;
-  /* identical to box height */
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #292929;
   margin-block-start: 10px;
   padding-left: 4px;
 }
@@ -184,33 +171,233 @@ input {
 }
 
 .navigation a {
-  color: #CDCDCD;
-  display: flex;
+  color: #545454;
+  /* display: flex;
   flex-direction: column;
-  row-gap: 1px;
+  row-gap: 1px; */
   text-decoration: none;
   transition: color 0.4s;
 }
 
 .navigation a:hover {
-  color: #FAFAFA;
+  color: #292929;
   transition: color 0.2s;
 }
 
-input:checked+label a {
-  color: #FAFAFA;
+input:checked + label {
+  color: #292929;
+  border-bottom: solid 3px #F1CDB3;
+  cursor: default;
+}
+
+input:checked + label a {
+  color: #292929;
+  cursor:default;
+}
+
+label:active {
   border-bottom: solid 3px #F1CDB3;
 }
 
-/* label a:active {
-  color: #FAFAFA;
-} */
-
-
-.selected {
-  border-bottom: solid 3px #F1CDB3;
+.label-text {
+  color: #545454;
+  cursor: pointer;
+  transition: color 0.4s;
 }
 
+.label-text:hover {
+  color: #292929;
+  transition: color 0.2s;
+}
+
+
+
+
+
+main {
+  width: 100%;
+}
+
+.our-friends {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F6F6F6;
+}
+
+.our-friends-container {
+  width: 1280px;
+  padding: 80px 40px 101px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 44px;
+}
+
+.our-friends-container h3 {
+  color: #545454;
+  text-align: center;
+}
+
+.card-container {
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.card-container-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+
+.card {
+  width: 270px;
+  height: 435px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FAFAFA;
+  border-radius: 9px;
+  transition: background-color 0.4s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  background-color: #FFFFFF;
+  transition: background-color 0.2s;
+}
+
+.card button {
+  width: 187px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  background: none;
+  color: #292929;
+  transition: background-color 0.4s;
+  cursor: pointer;
+}
+
+.card:hover button {
+  background-color: #FDDCC4;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.card h4 {
+  color: #545454;
+}
+
+.card-foto {
+  width: 270px;
+  height: 270px;
+  border-radius: 9px 9px 0px 0px;
+}
+
+.card-1 .card-foto {
+  background-image: url('../../assets/png/pets-katrine.png');
+}
+
+.card-2 .card-foto {
+  background-image: url('../../assets/png/pets-jennifer.png');
+}
+
+.card-3 .card-foto {
+  background-image: url('../../assets/png/pets-woody.png');
+}
+
+.card-4 .card-foto {
+  background-image: url('../../assets/png/pets-sophia.png');
+}
+
+.card-5 .card-foto {
+  background-image: url('../../assets/png/pets-timmy.png');
+}
+
+.card-6 .card-foto {
+  background-image: url('../../assets/png/pets-charly.png');
+}
+
+.card-7 .card-foto {
+  background-image: url('../../assets/png/pets-scarlet.png');
+}
+
+.card-8 .card-foto {
+  background-image: url('../../assets/png/pets-freddie.png');
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+
+.button-container button {
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+}
+
+.button-container button:disabled {
+  border: 2px solid #CDCDCD;
+  border-radius: 100px;
+  background: none;
+  color: #CDCDCD;
+}
+
+.number {
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  border: none;
+  color: #292929;
+  transition: background-color 0.4s;
+}
+
+.number:hover {
+  background-color: #FDDCC4;
+  transition: background-color 0.2s;
+}
+
+.number:active {
+  background-color: #F1CDB3;
+  transition: background-color 0.2s;
+}
+
+.dobl-arrow-left,
+.arrow-left,
+.arrow-right,
+.dowl-arrow-right {
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  background: none;
+  color: #292929;
+  transition: background-color 0.4s;
+}
+
+.dobl-arrow-left:hover,
+.arrow-left:hover,
+.arrow-right:hover,
+.dowl-arrow-right:hover {
+  border: none;
+  background-color: #FDDCC4;
+  transition: background-color 0.2s;
+}
+
+.dobl-arrow-left:active,
+.arrow-left:active,
+.arrow-right:active,
+.dowl-arrow-right:active {
+  border: none;
+  background-color:  #F1CDB3;
+  transition: background-color 0.2s;
+}
 
 
 
@@ -230,7 +417,6 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* column-gap: 160px; */
 }
 
 .question,
@@ -268,6 +454,14 @@ footer {
   transition: background-color 0.4s;
 }
 
+.mail img,
+.phone img,
+.boston img,
+.london img {
+  filter: invert(93%) sepia(6%) saturate(2427%) hue-rotate(314deg) brightness(97%) contrast(94%);
+  transition: color 0.4s;
+}
+
 .mail:hover,
 .phone:hover,
 .boston:hover,
@@ -276,17 +470,16 @@ footer {
   transition: background-color 0.2s;
 }
 
+.mail:hover img,
+.phone:hover img,
+.boston:hover img,
+.london:hover img {
+  filter: invert(96%) sepia(69%) saturate(463%) hue-rotate(298deg) brightness(103%) contrast(92%);
+  transition: color 0.2s;
+}
+
 .footer-dog {
   width: 300px;
   height: 310px;
   background: url("../../assets/png/footer-puppy.png");
 }
-
-
-
-
-
-
-
-
-

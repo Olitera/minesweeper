@@ -618,6 +618,7 @@ footer {
 
   .visit {
     width: 100%;
+    max-width: 320px;
     align-items: center;
     row-gap: 39px;
   }

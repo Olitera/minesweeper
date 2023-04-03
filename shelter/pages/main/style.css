@@ -215,6 +215,14 @@ label:active {
   transition: color 0.2s;
 }
 
+.burger {
+  display: none;
+  width: 30px;
+  height: 22px;
+  background: url("../../assets/svg/burger.svg");
+  /* position: absolute; */
+}
+
 
 main {
   width: 100%;
@@ -303,7 +311,7 @@ main {
   margin-left: 14.5%;
   width: 300px;
   height: 408px;
-  background: url("../../assets/png/about-pets.png");
+  background: url("../../assets/png/about-pets.png") no-repeat;
 }
 
 .about-text {
@@ -895,46 +903,195 @@ footer {
   .navigation {
     display: none;
   }
-}
 
-@media (max-width: 500px) {
-  .in-addition-text {
-    width: 90%;
-  }
-  .in-addition-text form {
-    width: 281px;
+  .burger {
+    display: block;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 520px) {
   .header-3 {
     font-size: 25px;
   }
+
   header {
     padding: 1px 19px;
   }
+
   .not-only-container {
     padding: 150px 10px 0px 10px;
+    row-gap: 104px;
   }
+
   .not-only-text {
     width: 100%;
   }
+
   .not-only-text h2 {
     font-size: 25px;
     align-self: center;
     text-align: center;
+    letter-spacing: 0.06em;
   }
+
   .not-only-text p {
     text-align: center;
   }
+
   .main-dog {
-    width: 90%;
+    width: 87%;
+    height: 100%;
+    margin-left: 14%;
   }
+
   .about-container {
-    padding: 42px 25px 100px 25px;
+    padding: 42px 25px 44px 25px;
+    row-gap: 41px;
   }
+
   .about-text {
     width: 100%;
+    row-gap: 23px;
+  }
+
+  .about-text h3 {
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+
+  .about-pets {
+    width: 96%;
+    height: 100%;
+    aspect-ratio: 300/408;
+    background-size: contain;
+  }
+
+  .our-friends-container {
+    padding: 42px 10px 42px 10px;
+    row-gap: 42px;
+  }
+
+  .arrow-left {
+    top: 105.5%;
+    left: 19%;
+  }
+
+  .arrow-right {
+    top: 105.5%;
+    right: 19%;
+  }
+
+  .slider-inner {
+    padding: 0px 5.5%;
+  }
+
+  .card-2 {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+    padding-bottom: 9.9%;
+  }
+
+  .rest {
+    margin-top: 76px;
+  }
+
+  .help-container {
+    padding: 42px 15px 42px 15px;
+    row-gap: 42px;
+  }
+
+  .in-addition-container {
+    padding: 42px 19px 42px 19px;
+    row-gap: 41px;
+  }
+  .in-addition-foto {
+    width: 93%;
+    height: 100%;
+  }
+  .in-addition-text form {
+    width: 281px;
+  }
+  .in-addition-text {
+    width: 100%;
+    align-items: center;
+    row-gap: 22px;
+  }
+  .in-addition-text h3 {
+    text-align: center;
+  }
+  .in-addition-text a {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+  .bank-text {
+    letter-spacing: 0;
+    text-align: center;
+  }
+  .legal-text {
+    text-align: justify;
+  }
+  .footer-container {
+    padding: 14px 10px 0px 10px;
+    row-gap: 40px;
+  }
+  .footer-note {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 25px;
+  }
+  .question {
+    width: 100%;
+    align-items: center;
+    row-gap: 42px;
+  }
+  .visit {
+    width: 100%;
+    align-items: center;
+    row-gap: 39px;
+  }
+  .question h3, .visit h3 {
+    text-align: center;
+  }
+  .visit h3 {
+    width: 98%;
+  }
+  .footer-dog {
+    width: 87%;
+    margin-left: 0%;
+  }
+  .london {
+    align-self: flex-start;
+  }
 }
-  
+
+@media (max-width: 330px) {
+  .option {
+    column-gap: 30px;
+    row-gap: 30px;
+    justify-content: flex-start;
+  }
+
+  .option-card {
+    width: 130px;
+    height: 87px;
+  }
+
+  .option-card h4 {
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+  }
+  .option-card-foto {
+    height: 50px;
+    background-size: contain;
+  }
+
 }

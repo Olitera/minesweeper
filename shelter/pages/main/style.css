@@ -815,22 +815,26 @@ footer {
 
 @media (max-width: 900px) {
   .our-friends-container {
-    padding: 80px 30px 101px 30px;
-    row-gap: 60px;
+    padding: 80px 30px 100px 30px;
+    row-gap: 59px;
   }
 
   .slider-inner {
     padding: 0 9%;
-    column-gap: 7.7%;
+    column-gap: 7%;
   }
 
   .card {
     width: 50%;
-    padding-bottom: 4.9%;
+    padding-bottom: 5.7%;
   }
 
   .card-3 {
     display: none;
+  }
+
+  .help-container {
+    padding: 80px 40px 99px 40px;
   }
 
 }
@@ -897,6 +901,7 @@ footer {
   .visit {
     width: 47%;
   }
+
 }
 
 @media (max-width: 767px) {
@@ -907,9 +912,13 @@ footer {
   .burger {
     display: block;
   }
+
+  .footer-container {
+    padding: 14px 10px 0px 10px;
+  }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 570px) {
   .header-3 {
     font-size: 25px;
   }
@@ -971,21 +980,21 @@ footer {
 
   .our-friends-container {
     padding: 42px 10px 42px 10px;
-    row-gap: 42px;
+    row-gap: 40px;
   }
 
   .arrow-left {
-    top: 105.5%;
+    top: 105%;
     left: 19%;
   }
 
   .arrow-right {
-    top: 105.5%;
+    top: 105%;
     right: 19%;
   }
 
   .slider-inner {
-    padding: 0px 5.5%;
+    padding: 0% 5%;
   }
 
   .card-2 {
@@ -994,15 +1003,15 @@ footer {
 
   .card {
     width: 100%;
-    padding-bottom: 9.9%;
+    padding-bottom: 11%;
   }
 
   .rest {
-    margin-top: 76px;
+    margin-top: 74px;
   }
 
   .help-container {
-    padding: 42px 15px 42px 15px;
+    padding: 42px 15px 41px 15px;
     row-gap: 42px;
   }
 
@@ -1016,11 +1025,12 @@ footer {
   }
   .in-addition-text form {
     width: 281px;
+    margin-bottom: -2px;
   }
   .in-addition-text {
     width: 100%;
     align-items: center;
-    row-gap: 22px;
+    row-gap: 23px;
   }
   .in-addition-text h3 {
     text-align: center;
@@ -1038,7 +1048,6 @@ footer {
     text-align: justify;
   }
   .footer-container {
-    padding: 14px 10px 0px 10px;
     row-gap: 40px;
   }
   .footer-note {
@@ -1090,7 +1099,7 @@ footer {
     /* identical to box height, or 17px */
   }
   .option-card-foto {
-    height: 50px;
+    height: 49px;
     background-size: contain;
   }
 

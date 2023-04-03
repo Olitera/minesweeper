@@ -259,8 +259,9 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: 40px;
+  column-gap: 3.3%;
   row-gap: 30px;
+  justify-content: center;
 }
 
 .card {
@@ -540,6 +541,10 @@ footer {
     padding: 15px 54px;
     overflow: hidden;
   }
+  
+  .card-container-inner {
+    column-gap: 6.8%;
+  }
 
   .button-container {
     padding-top: 42px;
@@ -566,9 +571,13 @@ footer {
   .burger {
     display: block;
   }
+
+  .footer-container {
+    padding: 14px 10px 0px 10px;
+  }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 570px) {
   header {
     padding: 30px 19px;
   }
@@ -590,7 +599,7 @@ footer {
   }
 
   .footer-container {
-    padding: 14px 10px 0px 10px;
+    /* padding: 14px 10px 0px 10px; */
     row-gap: 40px;
   }
 

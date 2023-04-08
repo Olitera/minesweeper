@@ -36,40 +36,51 @@ for (let i = 0; i < optionCardTextArray.length; i++) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if(!!location.href.match(/#help/)) {
+  if (!!location.href.match(/#help/)) {
     helpInput.checked = true;
   }
 })
 
 
-const menu = document.querySelector('.burger-menu');
+const menu = document.querySelector('.burger-menu-form');
 const burger = document.querySelector('.burger');
 
 function newMenu() {
-  menu.style.transform = 'translateX(0px)';
+  menu.style.transform = 'translate(0vw)';
+  burger.style.transform = 'rotate(90deg)';
 }
 
 burger.addEventListener('click', newMenu);
 
 function closeMenu() {
+
   menu.style.transform = '';
+  burger.style.transform = 'rotate(0deg)';
 }
 
 menu.addEventListener('click', closeMenu);
 
-// function newLog() {
-//   login.style.transform = 'translate(-100vw)';
-// }
+const card = document.querySelector('.card');
+const modal = document.querySelector('.pets-modal');
+const modalClose = document.querySelector('.modal-close');
 
-// logBut.addEventListener('click', newLog);
-// account.addEventListener('click', newLog);
+function openModal() {
+  modal.style.transform = 'translate(0vw)';
+}
 
-// function closeLog(event) {
-//   if (event.target === login) {
-//     login.style.transform = '';
-//   }
-// }
+card.addEventListener('click', openModal);
 
-// login.addEventListener('click', (event) => closeLog(event));
+function closeMod() {
+  modal.style.transform = '';
+}
 
+modalClose.addEventListener('click', closeMod);
+
+function closeModal(event) {
+  if (event.target === modal) {
+    modal.style.transform = '';
+  }
+}
+
+modal.addEventListener('click', (event) => closeModal(event));
 

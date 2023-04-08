@@ -188,18 +188,18 @@ input {
   transition: color 0.2s;
 }
 
-input:checked+label {
+.navigation input:checked+label {
   color: #FAFAFA;
   border-bottom: solid 3px #F1CDB3;
   cursor: default;
 }
 
-input:checked+label a {
+.navigation input:checked+label a {
   color: #FAFAFA;
   cursor: default;
 }
 
-label:active {
+.navigation label:active {
   color: #FAFAFA;
   border-bottom: solid 3px #F1CDB3;
 }
@@ -221,6 +221,58 @@ label:active {
   height: 22px;
   background: url("../../assets/svg/burger-but.svg");
   /* position: absolute; */
+}
+
+.burger-menu {
+  /* display: none; */
+  width: 320px;
+  height: 823px;
+  background: #292929;
+  position: absolute;
+  right: 0px;
+  top: -30px;
+  transform: translateX(320px);
+}
+
+.menu-burger {
+  width: 30px;
+  height: 22px;
+  background: url("../../assets/svg/burger-but.svg");
+  position: absolute;
+  top: 49px;
+  right: 21px;
+}
+
+.menu-container {
+  padding-top: 228px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 18px;
+}
+
+.menu-container label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1px;
+}
+
+.menu-container a {
+  text-decoration: none;
+}
+
+.burger-text {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+  color: #FAFAFA;
+}
+
+.menu-container input:checked+label {
+  border-bottom: solid 3px #F1CDB3;
+  cursor: default;
 }
 
 
@@ -913,6 +965,10 @@ footer {
     display: block;
   }
 
+  /* .burger-menu {
+    display: block;
+  } */
+
   .footer-container {
     padding: 14px 10px 0px 10px;
   }
@@ -1019,64 +1075,80 @@ footer {
     padding: 42px 19px 42px 19px;
     row-gap: 41px;
   }
+
   .in-addition-foto {
     width: 93%;
     height: 100%;
   }
+
   .in-addition-text form {
     width: 281px;
     margin-bottom: -2px;
   }
+
   .in-addition-text {
     width: 100%;
     align-items: center;
     row-gap: 23px;
   }
+
   .in-addition-text h3 {
     text-align: center;
   }
+
   .in-addition-text a {
     font-size: 15px;
     line-height: 110%;
     letter-spacing: 0.06em;
   }
+
   .bank-text {
     letter-spacing: 0;
     text-align: center;
   }
+
   .legal-text {
     text-align: justify;
   }
+
   .footer-container {
     row-gap: 40px;
   }
+
   .footer-note {
     width: 100%;
     flex-direction: column;
     align-items: center;
     row-gap: 25px;
   }
+
   .question {
     width: 100%;
     align-items: center;
     row-gap: 42px;
   }
+
   .visit {
     width: 100%;
     max-width: 320px;
     align-items: center;
     row-gap: 39px;
   }
-  .question h3, .visit h3 {
+
+  .question h3,
+  .visit h3 {
     text-align: center;
   }
+
   .visit h3 {
     width: 98%;
   }
+
   .footer-dog {
     width: 87%;
     margin-left: 0%;
   }
+
   .london {
     align-self: flex-start;
   }
@@ -1099,6 +1171,7 @@ footer {
     line-height: 110%;
     /* identical to box height, or 17px */
   }
+
   .option-card-foto {
     height: 49px;
     background-size: contain;

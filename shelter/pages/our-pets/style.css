@@ -29,7 +29,8 @@ p,
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -186,13 +187,13 @@ input {
   transition: color 0.2s;
 }
 
-input:checked+label {
+.navigation input:checked+label {
   color: #292929;
   border-bottom: solid 3px #F1CDB3;
   cursor: default;
 }
 
-input:checked+label a {
+.navigation input:checked+label a {
   color: #292929;
   cursor: default;
 }
@@ -216,9 +217,90 @@ label:active {
   display: none;
   width: 30px;
   height: 22px;
-  background: url("../../assets/svg/burger-black.svg");
-  /* position: absolute; */
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 20px;
+  z-index: 2;
+  transition: transform 0.5s;
+  cursor: pointer;
 }
+
+.burger-linea {
+  width: 30px;
+  height: 1px;
+  border: 1px solid #000000;
+}
+
+.burger-menu-form {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background: #262425cc;
+  position: fixed;
+  top: 0px;
+  right: -100vw;
+  z-index: 1;
+  transition: transform 1.5s;
+}
+
+.burger-menu {
+  /* display: none; */
+  width: 320px;
+  height: 100%;
+  background: #292929;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  /* transform: translateX(320px);
+  transition: transform 0.7s; */
+}
+
+.menu-container {
+  padding-top: 228px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 18px;
+}
+
+.menu-container label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1px;
+}
+
+.menu-container a {
+  text-decoration: none;
+}
+
+.burger-text {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+  color: #FAFAFA;
+}
+
+.menu-container input:checked + label {
+  color: #FAFAFA;
+  border-bottom: solid 3px #F1CDB3;
+  cursor: default;
+}
+
+.menu-container label:active {
+  color: #FAFAFA;
+  border-bottom: solid 3px #F1CDB3;
+}
+
+.burger-label-text {
+  color: #FAFAFA;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+
 
 
 
@@ -311,7 +393,7 @@ main {
   border-radius: 9px 9px 0px 0px;
 }
 
-.card-1 .card-foto {
+/* .card-1 .card-foto {
   background-image: url('../../assets/png/pets-katrine.png');
 }
 
@@ -341,6 +423,154 @@ main {
 
 .card-8 .card-foto {
   background-image: url('../../assets/png/pets-freddie.png');
+} */
+
+.pets-modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(41, 41, 41, 0.6);
+  position: fixed;
+  top: 0px;
+  right: -100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 1; */
+  transition: transform 1.5s;
+}
+
+.modal-close {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  background: url("../../assets/svg/close.svg") no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -51px;
+  right: -41px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.modal-close:hover {
+  background-color: #FDDCC4;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.modal-close:active {
+  background-color: #F1CDB3;
+  ;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.pets-modal-inner {
+  width: 70.5%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  background: #FAFAFA;
+  border-radius: 9px;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  position: relative;
+}
+
+.modal-foto {
+  width: 56%;
+  height: 100%;
+  aspect-ratio: 500/500;
+  border-radius: 9px 0px 0px 9px;
+  background: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.modal-text {
+  width: 44.8%;
+  /* height: 362px; */
+  padding: 49px 20px 90px 31px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pet-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+}
+
+.pet-breed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.pet-description {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.pet-option {
+  display: flex;
+  flex-direction: column;
+  row-gap: 11px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+.pet-option-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.option-text {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.option-text-light {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.pet-option li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: #F1CDB3;
 }
 
 .button-container {
@@ -383,7 +613,7 @@ main {
 .dobl-arrow-left,
 .arrow-left,
 .arrow-right,
-.dowl-arrow-right {
+.dobl-arrow-right {
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   background: none;
@@ -394,7 +624,7 @@ main {
 .dobl-arrow-left:hover,
 .arrow-left:hover,
 .arrow-right:hover,
-.dowl-arrow-right:hover {
+.dobl-arrow-right:hover {
   border: none;
   background-color: #FDDCC4;
   transition: background-color 0.2s;
@@ -403,7 +633,7 @@ main {
 .dobl-arrow-left:active,
 .arrow-left:active,
 .arrow-right:active,
-.dowl-arrow-right:active {
+.dobl-arrow-right:active {
   border: none;
   background-color: #F1CDB3;
   transition: background-color 0.2s;
@@ -561,6 +791,23 @@ footer {
   .visit {
     width: 47%;
   }
+
+  .pets-modal-inner {
+    width: 82%;
+    height: 350px;
+  }
+
+  .modal-text {
+    padding: 11px 10px 37px 9px;
+  }
+
+  .pet-description {
+    font-size: 13px;
+  }
+
+  .pet-option {
+    row-gap: 5px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -569,6 +816,10 @@ footer {
   }
 
   .burger {
+    display: flex;
+  }
+
+  .burger-menu-form {
     display: block;
   }
 
@@ -639,6 +890,33 @@ footer {
 
   .london {
     align-self: flex-start;
+  }
+
+  .pets-modal-inner {
+    width: 75%;
+    height: 341px;
+  }
+
+  .modal-close {
+    top: -53px;
+    right: -31px;
+  }
+
+  .modal-foto {
+    display: none;
+  }
+  .modal-text {
+    width: 100%;
+    padding: 8px 9px 14px 11px;
+  }
+
+  .pet-main {
+    align-items: center;
+  }
+
+  .pet-name {
+    font-size: 35px;
+
   }
 
 }

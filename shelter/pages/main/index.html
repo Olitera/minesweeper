@@ -42,25 +42,25 @@
     <div class="burger-menu-form">
       <div class="burger-menu">
         <div class="menu-container">
-          <input type="radio" name="groop-burger" id="about" checked="checked">
-        <label for="about">
-          <a href="" class="burger-text">About the shelter</a>
-        </label>
-  
-        <input type="radio" name="groop-burger" id="pets">
-        <label for="pets">
-          <a href="../our-pets/index.html" class="burger-text">Our pets</a>
-        </label>
-  
-        <input type="radio" name="groop-burger" id="help-shelter" onchange="location.href='#help'">
-        <label for="help-shelter" class="burger-text label-text">Help the shelter</label>
-  
-        <input type="radio" name="groop-burger" id="contacts" onchange="location.href='#footer'">
-        <label for="contacts" class="burger-text label-text">Contacts</label>
+          <input type="radio" name="groop-burger" id="about-burger" checked="checked">
+          <label for="about-burger">
+            <a href="" class="burger-text">About the shelter</a>
+          </label>
+
+          <input type="radio" name="groop-burger" id="pets-burger">
+          <label for="pets-burger">
+            <a href="../our-pets/index.html" class="burger-text">Our pets</a>
+          </label>
+
+          <input type="radio" name="groop-burger" id="help-shelter-burger" onchange="location.href='#help'">
+          <label for="help-shelter-burger" class="burger-text label-text">Help the shelter</label>
+
+          <input type="radio" name="groop-burger" id="contacts-burger" onchange="location.href='#footer'">
+          <label for="contacts-burger" class="burger-text label-text">Contacts</label>
         </div>
       </div>
     </div>
-    
+
   </header>
   <main>
     <section class="not-only">
@@ -100,14 +100,62 @@
           <button class="arrow-left"></button>
           <button class="arrow-right"></button>
           <div class="slider-inner">
+            <div class="cards-container-outer">
+              <div class="cards-container first"></div>
+              <div class="cards-container second"></div>
+              <div class="cards-container first"></div>
+            </div>
           </div>
         </div>
         <form action="../our-pets/index.html">
           <button class="button rest">Get to know the rest</button>
         </form>
         <div class="pets-modal">
-          <button class="modal-close"></button>
-          <div class="pets-modal-inner"></div>
+          <div class="pets-modal-inner">
+            <button class="modal-close"></button>
+            <div class="modal-foto"></div>
+            <div class="modal-text">
+              <div class="pet-main">
+                <h3 class="header-3 pet-name"></h3>
+                <div class="pet-breed">
+                  <h4 class="header-4 kind"></h4>
+                  <p class="header-4">-</p>
+                  <h4 class="header-4 breed"></h4>
+                </div>
+              </div>
+              <h5 class="pet-description"></h5>
+              <ul class="pet-option">
+                <li>
+                  <div class="dot"></div>
+                  <div class="pet-option-text">
+                    <p class="option-text">Age:</p>
+                    <p class="option-text-light age"></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="dot"></div>
+                  <div class="pet-option-text">
+                    <p class="option-text">Inoculations:</p>
+                    <p class="option-text-light inoculations"></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="dot"></div>
+                  <div class="pet-option-text">
+                    <p class="option-text">Diseases:</p>
+                    <p class="option-text-light diseases"></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="dot"></div>
+                  <div class="pet-option-text">
+                    <p class="option-text">Parasites:</p>
+                    <p class="option-text-light parasites"></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -146,13 +194,14 @@
           <h3 class="header-3">For questions and suggestions</h3>
           <a class="header-4 mail" href="mailto:email@shelter.com"><img src="../../assets/svg/mail.svg" width="40"
               height="26" alt="Mail">email@shelter.com</a>
-          <a class="header-4 phone" href="tel:+136745677554"><img src="../../assets/svg/phone.svg" width="40" height="32"
-              alt="Phone">+13 674 567 75 54</a>
+          <a class="header-4 phone" href="tel:+136745677554"><img src="../../assets/svg/phone.svg" width="40"
+              height="32" alt="Phone">+13 674 567 75 54</a>
         </div>
         <div class="visit">
           <h3 class="header-3">We are waiting for your visit</h3>
           <a class="header-4 boston" href="https://goo.gl/maps/nt6vTJ9XZNbZL6TB6" target="_blank"><img
-              src="../../assets/svg/pin.svg" width="41" height="32" alt="Location">1 Central Street, Boston (entrance from
+              src="../../assets/svg/pin.svg" width="41" height="32" alt="Location">1 Central Street, Boston (entrance
+            from
             the store)</a>
           <a class="header-4 london" href="https://goo.gl/maps/rjoDb4aJfvXNFK4E7" target="_blank"><img
               src="../../assets/svg/pin.svg" width="22" height="32" alt="Location">18 South Park, London</a>

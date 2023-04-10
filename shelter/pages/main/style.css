@@ -29,7 +29,8 @@ p,
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -219,13 +220,13 @@ input {
   display: none;
   width: 30px;
   height: 22px;
-  /* background: url("../../assets/svg/burger-but.svg"); */
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
   right: 20px;
   z-index: 2;
   transition: transform 0.5s;
+  cursor: pointer;
 }
 
 .burger-linea {
@@ -237,25 +238,22 @@ input {
 .burger-menu-form {
   width: 100vw;
   height: 100vh;
+  display: none;
   background: #262425cc;
   position: fixed;
   top: 0px;
-  right: 0px;
+  right: -100vw;
   z-index: 1;
-  transform: translate(100vw);
   transition: transform 1.5s;
 }
 
 .burger-menu {
-  /* display: none; */
   width: 320px;
-  height: 823px;
+  height: 100%;
   background: #292929;
   position: absolute;
   right: 0px;
   top: 0px;
-  /* transform: translateX(320px);
-  transition: transform 0.7s; */
 }
 
 .menu-container {
@@ -350,8 +348,6 @@ main {
 }
 
 .main-dog {
-  /* width: 698px;
-  height: 728px; */
   width: 58%;
   aspect-ratio: 698/728;
   background: url("../../assets/png/start-screen-puppy.png") no-repeat;
@@ -428,15 +424,31 @@ main {
 
 .slider {
   width: 100%;
+  padding: 0 8.7%;
   position: relative;
 }
 
 .slider-inner {
   width: 100%;
-  padding: 0 8.7%;
+  height: 435px;
+  overflow: hidden;
+}
+
+.cards-container-outer {
+  height: 100%;
   display: flex;
   flex-direction: row;
-  column-gap: 9%;
+  column-gap: 90px;
+  position: relative;
+  transition: translate 500ms;
+}
+
+.cards-container {
+  /* width: 100%; */
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 90px;
 }
 
 .arrow-left {
@@ -488,7 +500,7 @@ main {
   /* height: 435px; */
   width: 30%;
   aspect-ratio: 270/435;
-  padding-bottom: 3.2%;
+  padding-bottom: 3.1%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -520,20 +532,6 @@ main {
   aspect-ratio: 270/270;
   /* height: 270px; */
   border-radius: 9px 9px 0px 0px;
-}
-
-.card-1 .card-foto {
-  background-image: url('../../assets/png/pets-katrine.png');
-  background-size: cover;
-}
-
-.card-2 .card-foto {
-  background-image: url('../../assets/png/pets-jennifer.png');
-  background-size: cover;
-}
-
-.card-3 .card-foto {
-  background-image: url('../../assets/png/pets-woody.png');
   background-size: cover;
 }
 
@@ -554,12 +552,11 @@ main {
   background: rgba(41, 41, 41, 0.6);
   position: fixed;
   top: 0px;
-  right: 0px;
+  right: -100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   /* z-index: 1; */
-  transform: translate(100vw);
   transition: transform 1.5s;
 }
 
@@ -571,8 +568,8 @@ main {
   background: url("../../assets/svg/close.svg") no-repeat;
   background-position: center;
   position: absolute;
-  top: 14.9%;
-  right: 11.5%;
+  top: -51px;
+    right: -41px;
   cursor: pointer;
   transition: background-color 0.4s;
 }
@@ -584,7 +581,8 @@ main {
 }
 
 .modal-close:active {
-  background-color: #F1CDB3;;
+  background-color: #F1CDB3;
+  ;
   border: none;
   transition: background-color 0.2s;
 }
@@ -592,9 +590,109 @@ main {
 .pets-modal-inner {
   width: 70.5%;
   height: 500px;
+  display: flex;
+  flex-direction: row;
   background: #FAFAFA;
   border-radius: 9px;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  position: relative;
+}
+
+.modal-foto {
+  width: 56%;
+  height: 100%;
+  aspect-ratio: 500/500;
+  border-radius: 9px 0px 0px 9px;
+  background: no-repeat;
+  background-size: contain;
+  background-position: center;
+  /* background: no-repeat; */
+}
+
+.modal-text {
+  width: 44.8%;
+  /* height: 362px; */
+  padding: 49px 20px 90px 31px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pet-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+}
+
+.pet-breed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.pet-description {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.pet-option {
+  display: flex;
+  flex-direction: column;
+  row-gap: 11px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+.pet-option-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.option-text {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.option-text-light {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  /* identical to box height, or 17px */
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.pet-option li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: #F1CDB3;
 }
 
 .rest {
@@ -940,14 +1038,26 @@ footer {
     row-gap: 59px;
   }
 
-  .slider-inner {
+  .slider {
     padding: 0 9%;
+  }
+
+  .slider-inner {
+    /* padding: 0 9%; */
     column-gap: 7%;
+  }
+
+  .cards-container-outer {
+    column-gap: 40px;
+  }
+
+  .cards-container {
+    column-gap: 40px;
   }
 
   .card {
     width: 50%;
-    padding-bottom: 5.7%;
+    padding-bottom: 5.4%;
   }
 
   .card-3 {
@@ -956,6 +1066,23 @@ footer {
 
   .help-container {
     padding: 80px 40px 99px 40px;
+  }
+
+  .pets-modal-inner {
+    width: 82%;
+    height: 350px;
+  }
+
+  .modal-text {
+    padding: 11px 10px 37px 9px;
+  }
+
+  .pet-description {
+    font-size: 13px;
+  }
+
+  .pet-option {
+    row-gap: 5px;
   }
 
 }
@@ -1034,9 +1161,9 @@ footer {
     display: flex;
   }
 
-  /* .burger-menu {
+  .burger-menu-form {
     display: block;
-  } */
+  }
 
   .footer-container {
     padding: 14px 10px 0px 10px;
@@ -1118,8 +1245,16 @@ footer {
     right: 19%;
   }
 
-  .slider-inner {
-    padding: 0% 5%;
+  .slider {
+    padding: 0 5%;
+  }
+
+  .cards-container-outer {
+    column-gap: 0px;
+  }
+  
+  .cards-container {
+  column-gap: 0px;
   }
 
   .card-2 {
@@ -1220,6 +1355,33 @@ footer {
 
   .london {
     align-self: flex-start;
+  }
+
+  .pets-modal-inner {
+    width: 75%;
+    height: 341px;
+  }
+
+  .modal-close {
+    top: -53px;
+    right: -31px;
+  }
+
+  .modal-foto {
+    display: none;
+  }
+  .modal-text {
+    width: 100%;
+    padding: 8px 9px 14px 11px;
+  }
+
+  .pet-main {
+    align-items: center;
+  }
+
+  .pet-name {
+    font-size: 35px;
+
   }
 }
 

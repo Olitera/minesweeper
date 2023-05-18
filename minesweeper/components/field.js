@@ -1,13 +1,38 @@
 import Cell from "./cell.js";
+function onClick(cell){
+cell.cellElement.innerText = cell.value;
+      cell.cellElement.classList.add('open');
 
 
+
+      switch (cell.value) {
+        case 0:
+          cell.cellElement.innerText = '';
+          break;
+        case 1:
+          cell.cellElement.classList.add('blue');
+          break;
+        case 2:
+          cell.cellElement.classList.add('green');
+          break;
+        case 3:
+          cell.cellElement.classList.add('red');
+          break;
+      }
+
+      if (cell.isBomb) {
+        cell.cellElement.innerText = '';
+        cell.cellElement.style.backgroundImage = `url('./assets/bomb.svg')`;
+        alert('Game over. Try again');
+      }
+    }
 class Field {
+  clickCount = 0;
   body = document.querySelector('body');
   game;
   fieldSize = 10;
   cellMatrix;
   
-
   createField() {
     this.game = document.createElement('div');
     this.game.className = 'game';
@@ -16,12 +41,31 @@ class Field {
   }
 
   updateField(number) {
+    this.clickCount = 0;
+    document.querySelector('.move').innerText = this.clickCount;
     this.game.innerText = '';
     this.updateFieldSize(number);
     this.cellMatrix = this.createMatrix(this.matrix);
+    this.game.addEventListener('click', (event) => this.onFieldClick(event)
+    // {
+    //   console.log(event.target);
+    //   this.cellMatrix.forEach((el,i) => {
+    //     el.forEach((e,j)=>{ 
+          
+    //       if(e.cellElement === event.target) {
+    //         onClick(e);
+    //         if(!e.isOpen){
+    //           this.clickCount = this.clickCount + 1;
+    //         }
+    //         e.isOpen = true;
+    //         console.log(this.clickCount);
+    //         document.querySelector('.move').innerText = this.clickCount;
+    //       }
+    //     })
+    //   });
+    // }
+    )
   }
-
-
 
   updateFieldSize(number) {
     if(number) {
@@ -33,6 +77,36 @@ class Field {
   createSquareArray() {
     this.matrix = Array.from(Array(this.fieldSize), () => Array.from({ length: 9 }, (_, index) => false).concat(Array.from({ length: 1 }, (_, index) => true)).sort(() => Math.random() - 0.5));
     return this.matrix;
+  }
+
+
+  onFieldClick(event){
+    
+    console.log(event.target);
+      this.cellMatrix.forEach((el,i) => {
+        el.forEach((e,j)=>{ 
+          
+          if(e.cellElement === event.target) {
+            if(e.isBomb && this.clickCount === 0) {
+              console.log('BOMB!!!')
+              this.game.removeEventListener('click', (event) => this.onFieldClick(event));
+              this.updateField();
+          
+            } else {
+              onClick(e);
+              if(!e.isOpen){
+                this.clickCount = this.clickCount + 1;
+              }
+              e.isOpen = true;
+              console.log(this.clickCount);
+              document.querySelector('.move').innerText = this.clickCount;
+            }
+
+            
+            
+          }
+        })
+      });
   }
 
   createLine() {

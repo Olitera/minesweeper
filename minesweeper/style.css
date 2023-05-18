@@ -11,11 +11,13 @@ body {
   background: #ecec2f;
 }
 
-.time-text, .move-text {
+.time-text,
+.move-text {
   color: #7b7474;
 }
 
-.time, .move {
+.time,
+.move {
   width: 50px;
   height: 50px;
   border: solid 1px #7b7474;
@@ -24,7 +26,7 @@ body {
 .game {
   width: 1000px;
   height: 1000px;
-  background: #7b7474;
+  background: #606069;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -37,24 +39,43 @@ body {
 .square {
   width: 98px;
   height: 98px;
-  border: solid 1px #ecec2f;
+  border: solid 1px #686855;
+  /* border-radius: 5px; */
+  box-shadow:
+    inset 0 0 3px 1px rgba(0, 0, 0, .8),
+    inset rgba(0, 0, 0, .3) -5px -5px 8px 5px,
+    inset rgba(255, 255, 255, .5) 5px 5px 8px 5px,
+    1px 1px 1px rgba(255, 255, 255, .1),
+    -2px -2px 5px rgba(0, 0, 0, .5);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: 30px;
+  font-weight: 800;
 }
 
 .open {
   background: #bdb5b5;
+  /* border: solid 1px #bdb5b5; */
+  box-shadow: none;
 }
 
 .green {
-  color: #8ee879;
+  color: #319b18;;
 }
 
 .blue {
   color: #3f2eda;
+}
+
+.red {
+  color: #a52034;
+}
+
+.flag {
+  background: url('./assets/flag.svg');
+  background-size: contain;
 }
 
 .restart {

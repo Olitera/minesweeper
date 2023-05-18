@@ -24,11 +24,12 @@ character.append(move);
 
 const field = new Field;
 field.createField();
+// console.log(field.game);
 
 const restart = document.createElement('button');
 restart.className = 'restart';
 restart.innerText = 'New game';
 body.append(restart);
-// restart.addEventListener('click', this.updateField());
+restart.addEventListener('click', () => {field.game.innerHtml="";field.updateField();});
 
 

@@ -2,7 +2,7 @@ class Cell {
   constructor(lineElement, value, isBomb) {
     this.lineElement = lineElement;
     this.value = value;
-    this.isBomb =isBomb;
+    this.isBomb = isBomb;
   }
 
   cellElement;
@@ -12,11 +12,25 @@ class Cell {
     squareInner.className = 'square';
     this.lineElement.append(squareInner);
     this.cellElement = squareInner;
-    this.cellElement.addEventListener('click',() => {
-      
+    this.cellElement.addEventListener('click', () => {
       this.cellElement.innerText = this.value;
-      if(this.isBomb) {
-        alert('bomb!');
+      this.cellElement.classList.add('open');
+      console.log(this.value);
+
+      switch (this.value) {
+        case 0:
+          this.cellElement.innerText = '';
+          break;
+        case 1:
+          this.cellElement.classList.add('blue');
+          break;
+        case 2:
+          this.cellElement.classList.add('green');
+          break;
+      }
+
+      if (this.isBomb) {
+        alert('Game over. Try again');
       }
     });
   }

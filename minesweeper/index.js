@@ -8,7 +8,7 @@ character.className = "character";
 body.append(character);
 const timeText = document.createElement('p');
 timeText.className = "time-text";
-timeText.innerText = 'Time';
+timeText.innerText = 'Game duration';
 character.append(timeText);
 const time = document.createElement('div');
 time.className = "time";
@@ -24,7 +24,6 @@ character.append(move);
 
 const field = new Field;
 field.createField();
-// console.log(field.game);
 
 const restart = document.createElement('button');
 restart.className = 'restart';

@@ -1,4 +1,6 @@
 body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,9 +31,16 @@ body {
   justify-content: center;
 }
 
+.restart {
+  width: 300px;
+  height: 50px;
+  background: #ecec2f;
+}
+
 .game {
-  width: 1000px;
-  height: 1000px;
+  width: 70%;
+  /* height: 80%; */
+  aspect-ratio: 1000/1000;
   background: #606069;
   display: flex;
   flex-direction: column;
@@ -39,12 +48,16 @@ body {
 }
 
 .line {
-  width: 98px;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .square {
-  width: 98px;
-  height: 98px;
+  width: 100%;
+  height: 100%;
   border: solid 1px #686855;
   /* border-radius: 5px; */
   box-shadow:
@@ -68,7 +81,8 @@ body {
 }
 
 .green {
-  color: #319b18;;
+  color: #319b18;
+  ;
 }
 
 .blue {
@@ -84,8 +98,8 @@ body {
   background-size: contain;
 }
 
-.restart {
-  width: 300px;
+.sound {
+  width: 70px;
   height: 50px;
   background: #ecec2f;
 }

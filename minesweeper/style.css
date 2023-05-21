@@ -22,7 +22,9 @@ body {
 }
 
 .time,
-.move {
+.move,
+.mine,
+.flag-number {
   width: 50px;
   height: 50px;
   border: solid 1px #7b7474;
@@ -36,6 +38,15 @@ body {
   height: 50px;
   background: #ecec2f;
 }
+
+.remark {
+  display: none;
+  width: 300px;
+  height: 50px;
+  background: #ecec2f;
+}
+
+
 
 .game {
   width: 70%;

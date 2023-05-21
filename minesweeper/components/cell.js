@@ -15,14 +15,6 @@ class Cell {
     squareInner.className = 'square';
     this.lineElement.append(squareInner);
     this.cellElement = squareInner;
-    // this.cellElement.addEventListener('mousedown', (event)=> {
-    //   event.preventDefault();
-      // if(event.button == 2) {
-      //   console.log(event.button, this.cellElement);
-      //   this.cellElement.classList.toggle('flag');
-      //   this.isFlag = !this.isFlag;
-      // }
-    // })
   }
   
 }

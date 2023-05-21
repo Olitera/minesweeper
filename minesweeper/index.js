@@ -104,25 +104,52 @@ const link = document.getElementById("theme-link");
 theme.addEventListener('click', changeTheme);
 
 function changeTheme() {
-  let lightTheme = "light.css";
-  let darkTheme = "dark.css";
-
+  const lightTheme = "light.css";
+  const darkTheme = "dark.css";
   let currTheme = link.getAttribute("href");
-  let theme = "";
+  // let theme = '';
 
-  if (currTheme == lightTheme) {
+  if (currTheme === lightTheme) {
     currTheme = darkTheme;
-    theme = "dark";
+    // theme = "dark";
   }
   else {
     currTheme = lightTheme;
-    theme = "light";
+    // theme = "light";
   }
-
   link.setAttribute("href", currTheme);
 }
 
 option.append(theme);
+
+const size = document.createElement('select');
+size.className = 'size';
+size.innerText = 'Size';
+
+const sSmall = document.createElement('option');
+sSmall.value = 10;
+sSmall.innerText = '10';
+const sMedium = document.createElement('option');
+sMedium.value = 15;
+sMedium.innerText = '15';
+const sBig = document.createElement('option');
+sBig.value = 25;
+sBig.innerText = '25';
+size.append(sSmall);
+size.append(sMedium);
+size.append(sBig);
+
+option.append(size);
+
+const mineVaryation = document.createElement('input');
+mineVaryation.className = 'mine-var';
+mineVaryation.type = 'number';
+mineVaryation.min = '10';
+mineVaryation.max = '99';
+mineVaryation.value = '10';
+option.append(mineVaryation);
+
+
 
 body.append(option);
 

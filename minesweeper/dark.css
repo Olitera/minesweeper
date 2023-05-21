@@ -1,0 +1,15 @@
+body {
+  background: rgb(46, 45, 45);
+}
+
+.time-text,
+.move-text {
+  color: #a79f9f;
+}
+
+.time,
+.move,
+.mine,
+.flag-number {
+  border: solid 1px #a79f9f;
+}

@@ -24,12 +24,17 @@ function onClick(cell) {
     cell.cellElement.style.backgroundImage = `url('./assets/mine.svg')`;
     cell.cellElement.style.backgroundColor = 'red';
     remarkText.innerText = 'Game over. Try again';
-    remark.style.display = 'block';
+    remarkText.style.color = 'red';
+    remark.style.display = 'flex';
   }
 }
 class Field {
   body = document.querySelector('body');
   sound = document.querySelector('.sound');
+  move = document.querySelector('.move');
+  time = document.querySelector('.time');
+  mine = document.querySelector('.mine');
+  flagNumber = document.querySelector('.flag-number');
   game;
   fieldSize = 10;
   cellMatrix;
@@ -53,13 +58,13 @@ class Field {
 
   updateField(number) {
     this.clickCount = 0;
-    document.querySelector('.move').innerText = this.clickCount;
+    this.move.innerText = this.clickCount;
     this.gameTime = 0;
-    document.querySelector('.time').innerText = this.gameTime;
+    this.time.innerText = this.gameTime;
     this.minesCount = 10;
-    document.querySelector('.mine').innerText = this.minesCount;
+    this.mine.innerText = this.minesCount;
     this.flagCount = 0;
-    document.querySelector('.flag-number').innerText = this.flagCount;
+    this.flagNumber.innerText = this.flagCount;
 
     this.game.innerText = '';
     this.game.removeEventListener('click', this.onFieldClick);
@@ -67,6 +72,7 @@ class Field {
     this.cellMatrix = this.createMatrix(this.matrix);
     this.game.addEventListener('click', this.onFieldClick);
     this.game.addEventListener('contextmenu', this.onFieldClick);
+    localStorage.setItem('matrix',JSON.stringify(this.cellMatrix));
   }
 
   updateFieldSize(number) {
@@ -86,7 +92,7 @@ class Field {
     this.cellMatrix.forEach((el, i) => {
       el.forEach((e, j) => {
         if (e.cellElement === event.target) {
-          console.log(event);
+          // console.log(event);
           event.preventDefault();
           if (event.button == 2 && !e.isOpen) {
             e.cellElement.classList.toggle('flag');
@@ -96,8 +102,8 @@ class Field {
             } else {
               this.flagCount++;
             }
-            document.querySelector('.flag-number').innerText = this.flagCount;
-            document.querySelector('.mine').innerText = this.minesCount - this.flagCount > 0 ? this.minesCount - this.flagCount : 0;
+            this.flagNumber.innerText = this.flagCount;
+            this.mine.innerText = this.minesCount - this.flagCount > 0 ? this.minesCount - this.flagCount : 0;
 
           } else if (event.button == 0 && event.type === 'click' && !e.isFlag) {
           this.clickFunction(i, j);
@@ -160,9 +166,16 @@ class Field {
         } else {
           this.audioEnd.play();
         }
+        this.sound.addEventListener('click', () => {
+          if (this.audioClick.played) {
+            this.audioClick.pause();
+          } else {
+            this.audioClick.play();
+          }
+        })
       }
       e.isOpen = true;
-      document.querySelector('.move').innerText = this.clickCount;
+      this.move.innerText = this.clickCount;
     }
   }
 

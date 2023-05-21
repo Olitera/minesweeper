@@ -8,45 +8,69 @@ body {
 }
 
 .character {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* column-gap: 10px; */
+  /* background: #ecec2f; */
+}
+
+.time-container {
+  width: 30%;
   display: flex;
   flex-direction: row;
   align-items: center;
   column-gap: 10px;
-  /* background: #ecec2f; */
 }
 
 .time-text,
 .move-text {
-  color: #5c5757;
   font-size: 20px;
+  cursor: default;
 }
 
 .time,
 .move,
 .mine,
 .flag-number {
-  width: 50px;
+  width: 25%;
   height: 50px;
-  border: solid 1px #7b7474;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 22px;
+  cursor: default;
 }
 
 .restart {
-  width: 300px;
+  width: 25%;
   height: 50px;
   background: #ecec2f;
+  border: none;
+  border-radius: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.restart:hover {
+  background: #dddda2;
+  transition: background-color 0.2s;
 }
 
 .remark {
   display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 300px;
   height: 50px;
   background: #ecec2f;
+  font-size: 25px;
+  border-radius: 20px;
 }
-
-
 
 .game {
   width: 70%;
@@ -83,10 +107,14 @@ body {
   justify-content: center;
   font-size: 30px;
   font-weight: 800;
+  background: no-repeat;
+    background-position: center;
 }
 
 .open {
   background: #bdb5b5;
+  /* background: no-repeat; */
+  background-position: center;
   /* border: solid 1px #bdb5b5; */
   box-shadow: none;
 }
@@ -110,7 +138,82 @@ body {
 }
 
 .sound {
-  width: 70px;
+  width: 10%;
   height: 50px;
   background: #ecec2f;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.sound:hover {
+  background: #dddda2;
+  transition: background-color 0.2s;
+}
+
+.theme {
+  width: 10%;
+  height: 50px;
+  background: #ecec2f;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.theme:hover {
+  background: #dddda2;
+  transition: background-color 0.2s;
+
+}
+
+@media (max-width: 1000px) {
+
+  .theme {
+    font-size: 15px;
+  }
+
+  .sound {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .theme {
+    font-size: 10px;
+  }
+
+  .sound {
+    font-size: 10px;
+  }
+
+  .restart {
+    font-size: 15px;
+  }
+
+  .time,
+  .move,
+  .mine,
+  .flag-number {
+    font-size: 18px;
+  }
+
+
+}
+
+@media (max-width: 550px) {
+
+  .theme {
+    font-size: 8px;
+  }
+
+  .sound {
+    font-size: 8px;
+  }
+
 }

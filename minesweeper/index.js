@@ -149,14 +149,22 @@ function changeTheme() {
 }
 
 option.append(theme);
-
 body.append(option);
+
+const buttonCont = document.createElement('div');
+buttonCont.className = 'button-container';
 
 const result = document.createElement('button');
 result.className = 'result';
 result.innerText = 'Result';
-body.append(result);
+buttonCont.append(result);
+
+function viewResult() {
+  table.classList.toggle('flex');
+}
+
 result.addEventListener('click', viewResult);
+
 
 const table = document.createElement('div');
 table.className = 'table';
@@ -169,11 +177,6 @@ for (let i = 0; i < 4; i++) {
   headerCell.innerText = headerTitles[i]
   tableHeader.append(headerCell);
 }
-
-
-
-
-
 table.append(tableHeader)
 const tableBody = document.createElement('div');
 tableBody.className = 'table-body';
@@ -188,15 +191,16 @@ for (let i = 0; i < 4; i++) {
 }  
 }
 
-function viewResult() {
-  table.classList.toggle('flex');
-}
-
-
 table.append(tableBody);
+buttonCont.append(table);
+
+const contin = document.createElement('button');
+contin.className = 'continue';
+contin.innerText = 'continue game';
+buttonCont.append(contin);
+body.append(buttonCont);
 
 
-body.append(table);
 
 const field = new Field;
 field.createField();

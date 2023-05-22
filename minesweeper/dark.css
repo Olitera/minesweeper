@@ -18,3 +18,36 @@ body {
 .game {
   background: #9a9ab5;
 }
+
+.open {
+  background: #ddd7d7;
+}
+
+.green {
+  color: #6c8d64;
+  ;
+}
+
+.blue {
+  color: #71b4f6;
+}
+
+.red {
+  color: #e8475f;
+}
+
+.purple {
+  color: #c54ad8;
+}
+
+.yellow {
+  color: #acac4a;
+}
+
+.pink {
+  color: #f499d6;
+}
+
+.orange {
+  color: #c29568;
+}

@@ -7,7 +7,8 @@ body {
   row-gap: 50px;
 }
 
-.character, .option {
+.character,
+.option {
   width: 70%;
   display: flex;
   flex-direction: row;
@@ -112,7 +113,7 @@ body {
   font-size: 30px;
   font-weight: 800;
   background: no-repeat;
-    background-position: center;
+  background-position: center;
 }
 
 .open {
@@ -157,7 +158,11 @@ body {
   background-size: contain;
 }
 
-.sound, .theme, .size, .mine-var, .result  {
+.sound,
+.theme,
+.size,
+.mine-var,
+.result {
   width: 10%;
   min-height: 50px;
   background: #ecec2f;
@@ -168,7 +173,11 @@ body {
   transition: background-color 0.4s;
 }
 
-.sound:hover, .theme:hover, .size:hover, .mine-var:hover, .result:hover {
+.sound:hover,
+.theme:hover,
+.size:hover,
+.mine-var:hover,
+.result:hover {
   background: #dddda2;
   transition: background-color 0.2s;
 }
@@ -213,6 +222,13 @@ body {
 .table-cell {
   width: 25%;
   border: solid 1px black;
+}
+
+.button-container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 1000px) {

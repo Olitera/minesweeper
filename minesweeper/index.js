@@ -6,12 +6,6 @@ const body = document.querySelector('body');
 const character = document.createElement('div');
 character.className = "character";
 
-const restart = document.createElement('button');
-restart.className = 'restart';
-restart.innerText = 'New game';
-character.append(restart);
-restart.addEventListener('click', () => { field.game.innerHtml = ""; field.updateField(); });
-
 const mineContainer = document.createElement('div');
 mineContainer.className = 'time-container';
 
@@ -151,20 +145,16 @@ function changeTheme() {
 option.append(theme);
 body.append(option);
 
-const buttonCont = document.createElement('div');
-buttonCont.className = 'button-container';
-
 const result = document.createElement('button');
 result.className = 'result';
 result.innerText = 'Result';
-buttonCont.append(result);
+body.append(result);
 
 function viewResult() {
   table.classList.toggle('flex');
 }
 
 result.addEventListener('click', viewResult);
-
 
 const table = document.createElement('div');
 table.className = 'table';
@@ -177,7 +167,8 @@ for (let i = 0; i < 4; i++) {
   headerCell.innerText = headerTitles[i]
   tableHeader.append(headerCell);
 }
-table.append(tableHeader)
+table.append(tableHeader);
+// console.log(table);
 const tableBody = document.createElement('div');
 tableBody.className = 'table-body';
 for (let i = 0; i < 10; i++) {
@@ -190,63 +181,64 @@ for (let i = 0; i < 4; i++) {
   tableLine.append(tableCell);
 }  
 }
-
 table.append(tableBody);
-buttonCont.append(table);
+console.log(table);
+
+body.append(table);
+
+const buttonCont = document.createElement('div');
+buttonCont.className = 'button-container';
+
+const restart = document.createElement('button');
+restart.className = 'restart';
+restart.innerText = 'New game';
+buttonCont.append(restart);
+restart.addEventListener('click', () => { 
+  field.game.innerHtml = ""; field.updateField(); 
+  buttonCont.style.display = 'none';
+});
+
 
 const contin = document.createElement('button');
 contin.className = 'continue';
-contin.innerText = 'continue game';
+contin.innerText = 'Continue game';
 buttonCont.append(contin);
-body.append(buttonCont);
+contin.addEventListener('click', () => {
+  const a=JSON.parse(localStorage.getItem('matrix'));
+  console.log(a);
+  field.updateField(null, a)
+  buttonCont.style.display = 'none';
+})
+
+// buttonCont.append(table);
 
 
+
+const fieldContainer = document.createElement('div');
+fieldContainer.className = 'field-container';
+option.before(fieldContainer);
 
 const field = new Field;
-field.createField();
+field.createField(buttonCont);
+// fieldContainer.append(buttonCont);
 
-
-// const dataFromLS = JSON.parse(localStorage.getItem('saves'));
-// const lines = document.querySelectorAll('.table-line');
-
-// if(dataFromLS) {
-//   dataFromLS.forEach((el,j)=> {
-//     el.forEach((element, i)=>{
-//       lines[j].children[i].innerText = element;
-//     })
-//   })
-// }
-
-
-
-
-
-
-
-// console.log (`
-// - бомбы когда выигрываешь
-// -the (win)
-// -(dark/light themes)
-// -implemented saving the latest 10 results using LocalStorage
-// -implemented saving the state of the game
-// -(easy - 10x10, medium - 15x15, hard - 25x25) and number of mines for each size of the field (from 10 to 99): 
-// 
-//   Score: 160/180
-// + layout, design, responsive UI: +10
-// + at the beginning state of the game, the frame has size 10x10 and is filled with unopened cells. Should be 10 mines on field by default: +10
-// + when user click on cells - it should be opened and marked as one of the following state: empty cell, cell with number, or cell with mine: +10
-// + the game should end when the player reveals all cells that do not contain mines (win) or clicks on mine (lose) and related message is displayed at the end of the game: +10
-// + mines are placed after the first move, so that user cannot lose on the first move. +20
-// + user can mark “mined” cells using flags so as not to accidentally open them displaying the number of mines remaining and displaying number of used flags: +10
-// + the game should use color coding (using numbers and colors) to indicate the number of mines surrounding a revealed cell: +10
-// + the game can be restarted without reloading the page: +10
-// + game duration and number of clicks are displayed: +15
-// + when user opens a square that does not touch any mines, it will be empty and the adjacent squares will automatically open in all directions until reaching squares that contain numbers: +15
-// + sound accompaniment (on/off) when clicking on cell and at the end of the game: +10
-// + implement ability to change the size (easy - 10x10, medium - 15x15, hard - 25x25) and number of mines for each size of the field (from 10 to 99): +20
-// - implemented saving the latest 10 results using LocalStorage: 0
-// - implemented saving the state of the game: 0
-// + option to choose different themes for the game board (dark/light themes): +10
-// `)
+console.log (`
+  Score: 170/180
++ layout, design, responsive UI: +10
++ at the beginning state of the game, the frame has size 10x10 and is filled with unopened cells. Should be 10 mines on field by default: +10
++ when user click on cells - it should be opened and marked as one of the following state: empty cell, cell with number, or cell with mine: +10
++ the game should end when the player reveals all cells that do not contain mines (win) or clicks on mine (lose) and related message is displayed at the end of the game: +10
++ mines are placed after the first move, so that user cannot lose on the first move. +20
++ user can mark “mined” cells using flags so as not to accidentally open them displaying the number of mines remaining and displaying number of used flags: +10
++ the game should use color coding (using numbers and colors) to indicate the number of mines surrounding a revealed cell: +10
++ the game can be restarted without reloading the page: +10
++ game duration and number of clicks are displayed: +15
++ when user opens a square that does not touch any mines, it will be empty and the adjacent squares will automatically open in all directions until reaching squares that contain numbers: +15
++ sound accompaniment (on/off) when clicking on cell and at the end of the game: +10
++ implement ability to change the size (easy - 10x10, medium - 15x15, hard - 25x25) and number of mines for each size of the field (from 10 to 99): +20
++ implemented saving the latest 10 results using LocalStorage: +10
+- implemented saving the state of the game: 0
++ option to choose different themes for the game board (dark/light themes): +10
+`)
 
 

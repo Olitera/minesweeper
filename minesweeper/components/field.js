@@ -43,6 +43,8 @@ class Field {
   remarkText = document.querySelector('.remark p');
   mineVaryation = document.querySelector('.mine-var');
   flagNumber = document.querySelector('.flag-number');
+  fieldContainer = document.querySelector('.field-container');
+  buttonContainer = document.querySelector('.button-container');
   game;
   fieldSize = 10;
   cellMatrix;
@@ -55,17 +57,23 @@ class Field {
   audioClick = new Audio('./assets/click.mp3');
   audioEnd = new Audio('./assets/gameOver.mp3');
   audioWin = new Audio('./assets/win.mp3');
+  
 
-  createField() {
+  createField(buttoncontainer) {
     const option = document.querySelector('.option'); 
     this.game = document.createElement('div');
     this.game.className = 'game';
-    option.before(this.game);
+    this.fieldContainer.append(this.game);
+    this.fieldContainer.append(buttoncontainer);
     this.updateField();
     this.fillTable(this.getDataFromLS());
   }
 
-  updateField(number) {
+  updateField(number, matrix) {
+    // const buttonContainer = document.querySelector('.button-container');
+    // if () {
+    //   buttonContainer.style.display = 'none';
+    // }
     this.stopTimer();
     this.remark.style.display = 'none';
     this.clickCount = 0;
@@ -84,7 +92,11 @@ class Field {
       this.mine.innerText = this.minesCount - this.flagCount;
     });
     this.updateFieldSize(number);
-    this.cellMatrix = this.createMatrix(this.matrix);
+    if(matrix){
+      this.cellMatrix = this.reloadMatrix(matrix);
+    } else {
+      this.cellMatrix = this.createMatrix(this.matrix);
+    }
     this.game.addEventListener('click', this.onFieldClick);
     this.game.addEventListener('contextmenu', this.onFieldClick);
     this.size.addEventListener('change', (e) => this.updateField(+this.size.value));
@@ -98,8 +110,6 @@ class Field {
       this.mine.innerText = this.minesCount - this.flagCount;
       this.updateField();
     });
-
-    localStorage.setItem('matrix', JSON.stringify(this.cellMatrix));
   }
 
   updateFieldSize(number) {
@@ -121,7 +131,7 @@ class Field {
       }
       this.matrix[st].push(el);
     })
-    console.log(this.matrix);
+    // console.log(this.matrix);
     return this.matrix;
   }
 
@@ -158,6 +168,7 @@ class Field {
         }
       })
     });
+    localStorage.setItem('matrix', JSON.stringify(this.cellMatrix));
   }
 
   openFreeCell(e) {
@@ -261,6 +272,23 @@ class Field {
       return line.map((el, j) => {
         const cell = new Cell(lineElement, this.checkEl(i, j), el);
         cell.createCell();
+        return cell;
+      });
+    })
+  }
+
+  reloadMatrix(array) {
+    return array.map((line, i) => {
+      const lineElement = this.createLine();
+      return line.map((el, j) => {
+        const cell = new Cell(lineElement, el.value, el.isBomb, el.isOpen, el.isFlag);
+        cell.createCell();
+        if(cell.isOpen) {
+          onClick(cell);
+        }
+        if(cell.isFlag) {
+          cell.cellElement.classList.add('flag');
+        }
         return cell;
       });
     })

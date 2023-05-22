@@ -1,4 +1,3 @@
-// import Cell from "./components/cell.js";
 import Field from "./components/field.js";
 
 const body = document.querySelector('body');
@@ -35,12 +34,28 @@ flagContainer.append(flag);
 
 character.append(flagContainer);
 
+const chooseContainer = document.createElement('div');
+chooseContainer.className = 'choose-container';
 
+const neew = document.createElement('button');
+neew.className = 'new';
+neew.innerText = 'New game';
+chooseContainer.append(neew);
+neew.addEventListener('click', () => {
+  field.game.innerHtml = ""; field.updateField();
+  buttonCont.style.display = 'none';
+});
+
+const sizeContainer = document.createElement('div');
+sizeContainer.className = 'size-container';
+
+const sizeText = document.createElement('p');
+sizeText.className = 'size-text';
+sizeText.innerText = 'size';
+sizeContainer.append(sizeText);
 
 const size = document.createElement('select');
 size.className = 'size';
-size.innerText = 'Size';
-
 const sSmall = document.createElement('option');
 sSmall.value = 10;
 sSmall.innerText = 'easy';
@@ -53,7 +68,16 @@ sBig.innerText = 'hard';
 size.append(sSmall);
 size.append(sMedium);
 size.append(sBig);
-character.append(size);
+sizeContainer.append(size);
+chooseContainer.append(sizeContainer);
+
+const mineVarContainer = document.createElement('div');
+mineVarContainer.className = 'size-container';
+
+const mineVarText = document.createElement('p');
+mineVarText.className = 'size-text';
+mineVarText.innerText = 'mines';
+mineVarContainer.append(mineVarText);
 
 const mineVaryation = document.createElement('input');
 mineVaryation.className = 'mine-var';
@@ -61,15 +85,12 @@ mineVaryation.type = 'number';
 mineVaryation.min = '10';
 mineVaryation.max = '99';
 mineVaryation.value = '10';
-character.append(mineVaryation);
+
+mineVarContainer.append(mineVaryation);
+chooseContainer.append(mineVarContainer);
+character.append(chooseContainer);
 
 body.append(character);
-
-// const intervalID = setInterval(() => {
-//   const currentTime = 1 + +time.innerText;
-//   time.innerText = `${currentTime}`;
-// }, 1000);
-// restart.addEventListener('click', ()=>clearInterval(intervalID));
 
 const remark = document.createElement('div');
 remark.className = 'remark';
@@ -115,8 +136,6 @@ moveContainer.append(move);
 option.append(moveContainer);
 
 
-
-
 const theme = document.createElement('button');
 theme.className = 'theme';
 theme.innerText = 'Theme';
@@ -129,15 +148,11 @@ function changeTheme() {
   const lightTheme = "light.css";
   const darkTheme = "dark.css";
   let currTheme = link.getAttribute("href");
-  // let theme = '';
-
   if (currTheme === lightTheme) {
     currTheme = darkTheme;
-    // theme = "dark";
   }
   else {
     currTheme = lightTheme;
-    // theme = "light";
   }
   link.setAttribute("href", currTheme);
 }
@@ -168,21 +183,19 @@ for (let i = 0; i < 4; i++) {
   tableHeader.append(headerCell);
 }
 table.append(tableHeader);
-// console.log(table);
 const tableBody = document.createElement('div');
 tableBody.className = 'table-body';
 for (let i = 0; i < 10; i++) {
-const tableLine = document.createElement('div');
-tableLine.className = 'table-line';
-tableBody.append(tableLine);
-for (let i = 0; i < 4; i++) {
-  const tableCell = document.createElement('div');
-  tableCell.className = 'table-cell';
-  tableLine.append(tableCell);
-}  
+  const tableLine = document.createElement('div');
+  tableLine.className = 'table-line';
+  tableBody.append(tableLine);
+  for (let i = 0; i < 4; i++) {
+    const tableCell = document.createElement('div');
+    tableCell.className = 'table-cell';
+    tableLine.append(tableCell);
+  }
 }
 table.append(tableBody);
-console.log(table);
 
 body.append(table);
 
@@ -193,8 +206,8 @@ const restart = document.createElement('button');
 restart.className = 'restart';
 restart.innerText = 'New game';
 buttonCont.append(restart);
-restart.addEventListener('click', () => { 
-  field.game.innerHtml = ""; field.updateField(); 
+restart.addEventListener('click', () => {
+  field.game.innerHtml = ""; field.updateField();
   buttonCont.style.display = 'none';
 });
 
@@ -204,14 +217,10 @@ contin.className = 'continue';
 contin.innerText = 'Continue game';
 buttonCont.append(contin);
 contin.addEventListener('click', () => {
-  const a=JSON.parse(localStorage.getItem('matrix'));
-  console.log(a);
+  const a = JSON.parse(localStorage.getItem('matrix'));
   field.updateField(null, a)
   buttonCont.style.display = 'none';
 })
-
-// buttonCont.append(table);
-
 
 
 const fieldContainer = document.createElement('div');
@@ -220,10 +229,9 @@ option.before(fieldContainer);
 
 const field = new Field;
 field.createField(buttonCont);
-// fieldContainer.append(buttonCont);
 
-console.log (`
-  Score: 170/180
+console.log(`
+  Score: 180/180
 + layout, design, responsive UI: +10
 + at the beginning state of the game, the frame has size 10x10 and is filled with unopened cells. Should be 10 mines on field by default: +10
 + when user click on cells - it should be opened and marked as one of the following state: empty cell, cell with number, or cell with mine: +10
@@ -237,7 +245,7 @@ console.log (`
 + sound accompaniment (on/off) when clicking on cell and at the end of the game: +10
 + implement ability to change the size (easy - 10x10, medium - 15x15, hard - 25x25) and number of mines for each size of the field (from 10 to 99): +20
 + implemented saving the latest 10 results using LocalStorage: +10
-- implemented saving the state of the game: 0
++ implemented saving the state of the game: +10
 + option to choose different themes for the game board (dark/light themes): +10
 `)
 

@@ -1,7 +1,4 @@
-// import Field from "./field.js";
 class Cell {
-  // isOpen = false;
-  // isFlag = false;
   constructor(lineElement, value, isBomb, isOpen, isFlag) {
     this.lineElement = lineElement;
     this.value = value;

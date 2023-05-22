@@ -3,7 +3,8 @@ body {
 }
 
 .time-text,
-.move-text {
+.move-text,
+.size-text {
   color: #a79f9f;
 }
 
@@ -51,3 +52,26 @@ body {
 .orange {
   color: #c29568;
 }
+
+.table {
+  background: rgb(46, 45, 45);
+  border-right: solid 1px ;
+  border-top: solid 1px #a79f9f;
+}
+
+.table-cell {
+  border-left: solid 1px #a79f9f;
+  border-bottom: solid 1px #a79f9f;
+  color: #a79f9f;
+}
+
+.table-header {
+  background: #5c5757;
+}
+
+.header-cell {
+  border-left: solid 1px #a79f9f;
+  border-bottom: solid 1px #a79f9f;
+  color: #a79f9f;
+}
+

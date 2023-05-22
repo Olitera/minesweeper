@@ -15,7 +15,21 @@ body {
   align-items: center;
   justify-content: space-between;
   column-gap: 10px;
-  /* background: #ecec2f; */
+}
+
+.choose-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.size-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .time-container {
@@ -27,7 +41,8 @@ body {
 }
 
 .time-text,
-.move-text {
+.move-text,
+.size-text {
   font-size: 20px;
   cursor: default;
 }
@@ -45,8 +60,9 @@ body {
   cursor: default;
 }
 
-.restart {
-  width: 25%;
+.restart,
+.continue {
+  width: 50%;
   height: 50px;
   background: #ecec2f;
   border: none;
@@ -56,7 +72,20 @@ body {
   transition: background-color 0.4s;
 }
 
-.restart:hover {
+.new {
+  width: 100%;
+  height: 50px;
+  background: #ecec2f;
+  border: none;
+  border-radius: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.restart:hover,
+.continue:hover,
+.new:hover {
   background: #dddda2;
   transition: background-color 0.2s;
 }
@@ -86,7 +115,6 @@ body {
 
 .line {
   width: 100%;
-  /* height: 10%; */
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -95,11 +123,8 @@ body {
 .square {
   height: 3.2vw;
   max-height: 40px;
-  /* width: 50px; */
   aspect-ratio: 1;
-  /* height: 100%; */
   border: solid 1px #686855;
-  /* border-radius: 5px; */
   box-shadow:
     inset 0 0 3px 1px rgba(0, 0, 0, .8),
     inset rgba(0, 0, 0, .3) -5px -5px 8px 5px,
@@ -117,9 +142,7 @@ body {
 }
 
 .open {
-  /* background: no-repeat; */
   background-position: center;
-  /* border: solid 1px #bdb5b5; */
   box-shadow: none;
 }
 
@@ -132,8 +155,7 @@ body {
 .theme,
 .size,
 .mine-var,
-.result,
-.continue {
+.result {
   width: 10%;
   min-height: 50px;
   height: 50px;
@@ -145,22 +167,23 @@ body {
   transition: background-color 0.4s;
 }
 
+.size, .mine-var {
+  width: 50%;
+}
+
 .sound:hover,
 .theme:hover,
 .size:hover,
 .mine-var:hover,
-.result:hover,
-.continue:hover {
+.result:hover {
   background: #dddda2;
   transition: background-color 0.2s;
 }
 
 .table {
   width: 400px;
-  /* height: 800px; */
   display: none;
   flex-direction: column;
-  background: #c6c6c3;
 }
 
 .flex {
@@ -171,12 +194,11 @@ body {
   display: flex;
   flex-direction: row;
   height: 30px;
-  border: solid 1px red;
 }
 
 .header-cell {
   width: 25%;
-  border: solid 1px red;
+  text-align: center;
 }
 
 .table-body {
@@ -187,27 +209,20 @@ body {
 
 .table-line {
   height: 30px;
-  border: solid 1px black;
   display: flex;
   flex-direction: row;
 }
 
 .table-cell {
   width: 25%;
-  border: solid 1px black;
+  text-align: center;
 }
 
 .button-container {
-  /* width: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; */
   position: absolute;
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
   top: 0;
-  /* bottom: 0; */
-  /* right: 0; */
   left: 0;
   display: flex;
   align-items: center;
@@ -235,11 +250,11 @@ body {
     font-size: 10px;
   }
 
-  .sound {
+  .sound, .size {
     font-size: 10px;
   }
 
-  .restart {
+  .restart, .result, .new, .continue {
     font-size: 15px;
   }
 

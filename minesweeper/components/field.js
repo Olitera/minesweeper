@@ -70,10 +70,6 @@ class Field {
   }
 
   updateField(number, matrix) {
-    // const buttonContainer = document.querySelector('.button-container');
-    // if () {
-    //   buttonContainer.style.display = 'none';
-    // }
     this.stopTimer();
     this.remark.style.display = 'none';
     this.clickCount = 0;
@@ -131,13 +127,11 @@ class Field {
       }
       this.matrix[st].push(el);
     })
-    // console.log(this.matrix);
     return this.matrix;
   }
 
 
   onFieldClick = (event) => {
-    console.log(this.clickCount);
     if (this.clickCount === 0) {
       this.startTimer();
     }
@@ -236,7 +230,13 @@ class Field {
         this.remarkText.style.color = 'red';
         this.remark.style.display = 'flex';
         this.stopTimer();
-        console.log(this.gameTime);
+        this.game.removeEventListener('click', this.onFieldClick);
+        this.game.removeEventListener('contextmenu', this.onFieldClick);
+        this.size.removeEventListener('change', (e) => this.updateField(+this.size.value));
+        this.mineVaryation.removeEventListener('change', () => {
+          this.minesCount = this.mineVaryation.value
+          this.mine.innerText = this.minesCount - this.flagCount;
+        });
       }
 
       //IF WIN

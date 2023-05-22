@@ -1,5 +1,5 @@
 body {
-  background: rgb(242, 242, 238);
+  background: rgb(229, 229, 227);
 }
 
 .time-text,
@@ -12,4 +12,8 @@ body {
 .mine,
 .flag-number {
   border: solid 1px #7b7474;
+}
+
+.game {
+  background: #606069;
 }

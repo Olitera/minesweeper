@@ -7,13 +7,13 @@ body {
   row-gap: 50px;
 }
 
-.character {
+.character, .option {
   width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* column-gap: 10px; */
+  column-gap: 10px;
   /* background: #ecec2f; */
 }
 
@@ -70,13 +70,14 @@ body {
   background: #ecec2f;
   font-size: 25px;
   border-radius: 20px;
+  text-align: center;
 }
 
 .game {
   /* width: 70%; */
   /* height: 80%; */
   /* aspect-ratio: 1000/1000; */
-  background: #606069;
+  /* background: #606069; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -135,14 +136,30 @@ body {
   color: #a52034;
 }
 
+.purple {
+  color: #510d5b;
+}
+
+.yellow {
+  color: #ecec2f;
+}
+
+.pink {
+  color: #e93aaf;
+}
+
+.orange {
+  color: #e37f1a;
+}
+
 .flag {
   background: url('./assets/flag.svg');
   background-size: contain;
 }
 
-.sound {
+.sound, .theme, .size, .mine-var, .result  {
   width: 10%;
-  height: 50px;
+  min-height: 50px;
   background: #ecec2f;
   border: none;
   border-radius: 20px;
@@ -151,26 +168,51 @@ body {
   transition: background-color 0.4s;
 }
 
-.sound:hover {
+.sound:hover, .theme:hover, .size:hover, .mine-var:hover, .result:hover {
   background: #dddda2;
   transition: background-color 0.2s;
 }
 
-.theme {
-  width: 10%;
-  height: 50px;
-  background: #ecec2f;
-  border: none;
-  border-radius: 20px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.4s;
+.table {
+  width: 400px;
+  /* height: 800px; */
+  display: none;
+  flex-direction: column;
+  background: #c6c6c3;
 }
 
-.theme:hover {
-  background: #dddda2;
-  transition: background-color 0.2s;
+.flex {
+  display: flex;
+}
 
+.table-header {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  border: solid 1px red;
+}
+
+.header-cell {
+  width: 25%;
+  border: solid 1px red;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.table-line {
+  height: 30px;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: row;
+}
+
+.table-cell {
+  width: 25%;
+  border: solid 1px black;
 }
 
 @media (max-width: 1000px) {

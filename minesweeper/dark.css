@@ -12,4 +12,9 @@ body {
 .mine,
 .flag-number {
   border: solid 1px #a79f9f;
+  color: #ece2e2;
+}
+
+.game {
+  background: #9a9ab5;
 }

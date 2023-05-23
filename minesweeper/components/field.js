@@ -69,7 +69,7 @@ class Field {
     this.fillTable(this.getDataFromLS());
   }
 
-  updateField(number, matrix) {
+  updateField(number, ls) {
     this.stopTimer();
     this.remark.style.display = 'none';
     this.clickCount = 0;
@@ -88,8 +88,18 @@ class Field {
       this.mine.innerText = this.minesCount - this.flagCount;
     });
     this.updateFieldSize(number);
-    if(matrix){
-      this.cellMatrix = this.reloadMatrix(matrix);
+    if(ls){
+      this.cellMatrix = this.reloadMatrix(ls.matrix);
+      this.gameTime = ls.time;
+      this.minesCount = ls.mines;
+      this.fieldSize = ls.size;
+      this.size.value = ls.size;
+      this.clickCount = ls.clicks;
+      this.move.innerText = this.clickCount;
+      this.mine.innerText = this.minesCount;
+      this.mineVaryation.value = this.minesCount;
+      this.time.innerText = ls.time;
+      this.startTimer();
     } else {
       this.cellMatrix = this.createMatrix(this.matrix);
     }
@@ -162,7 +172,13 @@ class Field {
         }
       })
     });
-    localStorage.setItem('matrix', JSON.stringify(this.cellMatrix));
+    localStorage.setItem('matrix', JSON.stringify({
+      matrix: this.cellMatrix,
+      time: this.gameTime,
+      size:this.fieldSize,
+      mines: this.minesCount,
+      clicks: this.move.innerText,
+    }));
   }
 
   openFreeCell(e) {
